@@ -1,4 +1,4 @@
-/* Základní styly pro tmavý vesmírný vzhled */
+/* Základní styly a nastavení pro Sticky Footer (patička vždy dole) */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #0b0c10;
@@ -6,8 +6,14 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    
+    /* Zajištění, aby stránka zabrala celou výšku obrazovky */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+/* Hlavička webu */
 header {
     background-color: #1f2833;
     padding: 20px;
@@ -20,6 +26,7 @@ header h1 {
     margin: 0 0 10px 0;
 }
 
+/* Navigační menu */
 nav a {
     color: #45a29e;
     text-decoration: none;
@@ -33,16 +40,19 @@ nav a:hover, nav a.active {
     text-decoration: underline;
 }
 
+/* Hlavní obsah (roztáhne se a odtlačí patičku dolů) */
 main {
     max-width: 900px;
     margin: 30px auto;
     padding: 0 20px;
+    flex: 1;
 }
 
 h2, h3 {
     color: #66fcf1;
 }
 
+/* Úprava obrázků */
 img {
     max-width: 100%;
     height: auto;
@@ -51,6 +61,7 @@ img {
     box-shadow: 0 4px 15px rgba(102, 252, 241, 0.2);
 }
 
+/* Mřížka pro galerii obrázků */
 .gallery-grid {
     display: flex;
     gap: 20px;
@@ -67,11 +78,14 @@ img {
     text-align: center;
 }
 
+/* Patička webu - vždy uprostřed a na konci stránky */
 footer {
     text-align: center;
     padding: 20px;
     background-color: #1f2833;
-    margin-top: 40px;
+    margin-top: auto;
     border-top: 1px solid #45a29e;
     font-size: 0.9rem;
+    width: 100%;
+    box-sizing: border-box;
 }
